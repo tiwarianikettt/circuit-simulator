@@ -171,3 +171,30 @@ main section {
     border-radius: 10px;
     background: #0B1120;
 }
+.right-box {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: #111827;
+    color: #F8FAFC;
+
+    border-left: 1px solid #334155;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.right-box::-webkit-scrollbar {
+  width: 8px;
+}
+.right-box::-webkit-scrollbar-track {
+  background: #0d1526;
+}
+.right-box::-webkit-scrollbar-thumb {
+  background: #3a4a6b;
+  border-radius: 4px;
+}
