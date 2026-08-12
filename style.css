@@ -112,25 +112,27 @@ button span {
 
 .shortcuts {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
+    border: 1px solid #f8fafc6e;
 
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 5px;
 
     width: calc(100% - 40px);
 
     background-color: #1b2534;
     border-radius: 3%;
+
 }
 
 .shortcuts li {
     padding: 5px 10px;
-
-    font-size: 0.6rem;
+    border: 1px solid #f8fafc38;
+    font-size: 15px;
     
     color: #94A3B8;
 }
