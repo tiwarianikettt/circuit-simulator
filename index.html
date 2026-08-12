@@ -24,47 +24,47 @@
 
         <aside class="circuit_elements">
 
-            <button>
+            <button data-type="wire">
                 <img src="wire.svg" alt="wire_img">
                 <span>Wire</span>
             </button>
 
-            <button>
+            <button data-type="switch">
                 <img src="switch.svg" alt="switch_img">
                 <span>Switch</span>
             </button>
 
-            <button>
+            <button data-type="resistor">
                 <img src="resistor.svg" alt="resistor_img">
                 <span>Resistor</span>
             </button>
 
-            <button>
+            <button data-type="capacitor">
                 <img src="capacitor.svg" alt="capacitor_img">
                 <span>Capacitor</span>
             </button>
 
-            <button>
+            <button data-type="inductor">
                 <img src="inductor.svg" alt="inductor_img">
                 <span>Inductor</span>
             </button>
 
-            <button>
+            <!-- <button data-type="diode">
                 <img src="diode.svg" alt="diode_img">
                 <span>Diode</span>
-            </button>
+            </button> -->
 
-            <button>
+            <button data-type="voltage">
                 <img src="voltage.svg" alt="voltage_source_img">
                 <span>Voltage Source</span>
             </button>
 
-            <button>
+            <button data-type="current">
                 <img src="current.svg" alt="current_source_img">
                 <span>Current Source</span>
             </button>
 
-            <button>
+            <button data-type="ground">
                 <img src="ground.svg" alt="ground_img">
                 <span>Ground</span>
             </button>
@@ -76,7 +76,7 @@
         <main>
 
             <section>
-
+                <svg id="wireLayer"></svg>
             </section>
         </main>
 
@@ -94,10 +94,18 @@
                     <li>Press esc to cancel</li>
                 </ul>
 
+                <div id="propsDynamic" class="props-dynamic">
+                    <p class="props-hint">Select an element to edit its properties.</p>
+                </div>
+
+                <button id="simulateBtn" class="simulate-btn">Simulate</button>
+
             </div>
         </aside>
 
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

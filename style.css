@@ -47,7 +47,7 @@ nav li h1 {
 
 .workspace {
     display: flex;
-    height: calc(100vh - 50px); /* 50px = your nav height */
+    height: calc(100vh - 50px); 
 }
 
 aside {
@@ -172,10 +172,295 @@ main section {
     height: 94%;
 
     margin: 15px;
+    position: relative;
 
     border: 1px solid #334155;
     border-radius: 10px;
     background: #0B1120;
+
+    overflow: hidden;
+}
+
+#wireLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.wire-line {
+    stroke: #F8FAFC;
+    stroke-width: 2;
+}
+
+.placed-element {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: grab;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.placed-element img {
+    width: 55px;
+    height: 35px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.placed-element.selected {
+    outline: 2px solid #22D3EE;
+    background: rgba(34, 211, 238, 0.08);
+}
+
+.terminal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22D3EE;
+    cursor: crosshair;
+    z-index: 2;
+}
+
+main section.wire-mode,
+#canvas.wire-mode {
+    cursor: crosshair;
+}
+
+
+.props-dynamic {
+    padding: 15px 20px;
+}
+
+.props-hint {
+    font-size: 13px;
+    color: #94A3B8;
+}
+
+.props-dynamic h2 {
+    font-size: 15px;
+    color: #22D3EE;
+    margin-bottom: 10px;
+}
+
+.prop-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.prop-row label {
+    font-size: 12px;
+    color: #94A3B8;
+}
+
+.prop-row input,
+.prop-row select {
+    background: #0F172A;
+    border: 1px solid #334155;
+    color: #F8FAFC;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.prop-row input:focus,
+.prop-row select:focus {
+    outline: none;
+    border-color: #22D3EE;
+}
+
+.prop-result {
+    margin-top: 10px;
+    padding: 10px;
+    background: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #94A3B8;
+    line-height: 1.6;
+}
+
+.prop-delete-btn {
+    width: 100%;
+    height: auto;
+    margin: 15px 0 0;
+    padding: 8px;
+    background-color: #7f1d1d;
+    border: 1px solid #b91c1c;
+    color: #F8FAFC;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.prop-delete-btn:hover {
+    background-color: #991b1b;
+}
+
+.simulate-btn {
+    width: 100%;
+    height: auto;
+    margin: 10px 0 0;
+    padding: 10px;
+    background-color: #164E63;
+    border: 1px solid #22D3EE;
+    color: #F8FAFC;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.simulate-btn:hover {
+    background-color: #155e75;
+}
+
+.info-icon {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: bold;
+    color: #94A3B8;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.info-icon:hover {
+    background: #164E63;
+    border-color: #22D3EE;
+    color: #22D3EE;
+}
+
+.learn-btn {
+    width: 100%;
+    height: auto;
+    margin: 0 0 15px;
+    padding: 8px;
+
+    background-color: #1b2534;
+    border: 1px solid #22D3EE;
+    color: #22D3EE;
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.learn-btn:hover {
+    background-color: #164E63;
+}
+
+.learn-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+.learn-modal {
+    position: relative;
+
+    width: 90%;
+    max-width: 420px;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 10px;
+
+    padding: 30px 24px 24px;
+
+    color: #F8FAFC;
+}
+
+.learn-modal h2 {
+    font-size: 20px;
+    color: #22D3EE;
+    margin-bottom: 12px;
+}
+
+.learn-blurb {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #F8FAFC;
+    margin-bottom: 18px;
+}
+
+.learn-block {
+    margin-bottom: 14px;
+    padding: 12px;
+    background: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 6px;
+}
+
+.learn-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94A3B8;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.learn-block p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #F8FAFC;
+}
+
+.learn-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: none;
+    border: none;
+    color: #94A3B8;
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.learn-close:hover {
+    color: #F8FAFC;
 }
 .right-box {
     display: flex;
