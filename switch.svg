@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="100" viewBox="0 0 240 100">
+    <!-- Left wire -->
+    <line x1="20" y1="50" x2="90" y2="50"
+          stroke="#0F172A"
+          stroke-width="5"
+          stroke-linecap="round"/>
+
+    <!-- Right wire -->
+    <line x1="150" y1="50" x2="220" y2="50"
+          stroke="#0F172A"
+          stroke-width="5"
+          stroke-linecap="round"/>
+
+    <!-- Connection points -->
+    <circle cx="90" cy="50" r="7" fill="#0F172A"/>
+    <circle cx="150" cy="50" r="7" fill="#0F172A"/>
+
+    <!-- Switch lever -->
+    <line x1="90" y1="50" x2="142" y2="25"
+          stroke="#0F172A"
+          stroke-width="5"
+          stroke-linecap="round"/>
+</svg>
