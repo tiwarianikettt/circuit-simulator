@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 
 body {
     background: #0B1120;
@@ -42,6 +47,7 @@ nav li h1 {
 
 .workspace {
     display: flex;
+    height: calc(100vh - 50px); /* 50px = your nav height */
 }
 
 aside {
@@ -57,7 +63,7 @@ aside {
     flex-shrink: 0;
 
     width: 220px;
-    height: 100vh;
+    height: 100%;
 
     background: #111827;
     color: #F8FAFC;
@@ -177,7 +183,7 @@ main section {
     flex-shrink: 0;
 
     width: 250px;
-    height: 100vh;
+    height: 100%;
 
     background: #111827;
     color: #F8FAFC;
