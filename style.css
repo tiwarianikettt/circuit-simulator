@@ -62,7 +62,20 @@ aside {
     background: #111827;
     color: #F8FAFC;
 
+    overflow-y: auto;
+    overflow-x: hidden;
+
     border-right: 1px solid #334155;
+}
+.circuit_elements::-webkit-scrollbar {
+  width: 8px;
+}
+.circuit_elements::-webkit-scrollbar-track {
+  background: #0d1526;
+}
+.circuit_elements::-webkit-scrollbar-thumb {
+  background: #3a4a6b;
+  border-radius: 4px;
 }
 
 button {
